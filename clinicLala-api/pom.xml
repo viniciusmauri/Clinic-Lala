@@ -5,16 +5,20 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.6.RELEASE</version>
+		<version>1.5.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	
 	<groupId>com.lala.clinic-api</groupId>
 	<artifactId>clinicLala-api</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>clinicLala-api</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
+		<project.build.sourceEndcoding>UTF-8</project.build.sourceEndcoding>
+		<project.reporting.outputEncoding>UFT-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 	</properties>
 
@@ -39,7 +43,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- mysql -->
+		<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<scope>runtime</scope>
+		</dependency>
 	</dependencies>
+
 
 	<build>
 		<plugins>

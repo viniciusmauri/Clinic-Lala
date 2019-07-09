@@ -12,6 +12,7 @@ public class Endereco {
 	private String cidade;
 	private String estado;
 	private String cep;
+
 	public String getLogradouro() {
 		return logradouro;
 	}
@@ -54,5 +55,4 @@ public class Endereco {
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
-
 }

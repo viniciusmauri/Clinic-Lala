@@ -1,5 +1,7 @@
 package com.example.cliniclala.api.model;
 
+import java.util.Date;
+
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +24,12 @@ public class Pessoa {
 	
 	@Embedded
 	private Endereco endereco;
+	
+	@NotNull
+	private Long CPF;
+	
+	@NotNull
+	private Date dataNascimento;
 	
 	@NotNull
 	private Boolean ativo;
@@ -50,6 +58,34 @@ public class Pessoa {
 		this.ativo = ativo;
 	}
 	
+	/**
+	 * @return the cPF
+	 */
+	public Long getCPF() {
+		return CPF;
+	}
+
+	/**
+	 * @param cPF the cPF to set
+	 */
+	public void setCPF(Long cPF) {
+		CPF = cPF;
+	}
+
+	/**
+	 * @return the dataNascimento
+	 */
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
+
+	/**
+	 * @param dataNascimento the dataNascimento to set
+	 */
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

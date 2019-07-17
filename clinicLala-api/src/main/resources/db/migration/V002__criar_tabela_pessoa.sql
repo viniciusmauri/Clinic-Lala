@@ -8,6 +8,7 @@ CREATE TABLE pessoa(
 	cep VARCHAR(30),
 	cidade VARCHAR(30),
 	estado VARCHAR(30),
+	cpf VARCHAR(11),
 	ativo BOOLEAN NOT NULL
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 	

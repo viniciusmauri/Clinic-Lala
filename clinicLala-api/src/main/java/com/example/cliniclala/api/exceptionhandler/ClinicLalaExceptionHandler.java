@@ -3,6 +3,7 @@ package com.example.cliniclala.api.exceptionhandler;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -31,9 +32,9 @@ public class ClinicLalaExceptionHandler extends ResponseEntityExceptionHandler {
 	protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex,
 			HttpHeaders headers, HttpStatus status, WebRequest request) {
 
-		String mensagemUser = messageSource.getMessage("mensagem.invalida", null, LocaleContextHolder.getLocale());
-		String mensagemDev = ex.getCause().toString();
-		List<Erro> erros = Arrays.asList(new Erro(mensagemUser, mensagemDev));
+		String mensagemUser = this.messageSource.getMessage("mensagem.invalida", null, LocaleContextHolder.getLocale());
+		String mensagemDev = Optional.ofNullable(ex.getCause()).orElse(ex).toString();
+		List erros = Arrays.asList(new Erro(mensagemUser, mensagemDev));
 		return handleExceptionInternal(ex, erros, headers, HttpStatus.BAD_REQUEST,
 				request);
 	}

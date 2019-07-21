@@ -75,6 +75,4 @@ public class PessoaResource {
 	public void atualizarPropriedadeAtivo(@PathVariable Long cod, @Valid @RequestBody Pessoa pessoa, Boolean ativo){
 		pessoaService.atualizarPropriedadeAtivo(cod, ativo);
 	}
-	
-	//@PutMapping("/{cod}/endereco")
 }

@@ -42,7 +42,8 @@ public class PessoaResource {
 		return pessoaRepository.findAll();
 	}
 
-	@PostMapping @ResponseStatus(HttpStatus.CREATED)
+	@PostMapping 
+	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<Pessoa> criar(@Valid @RequestBody Pessoa pessoa, 
 			HttpServletResponse response) {
 		Pessoa pessoaSalva = pessoaRepository.save(pessoa);

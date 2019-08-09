@@ -1,4 +1,4 @@
-package com.example.cliniclala.api.model;
+ package com.example.cliniclala.api.model;
 
 
 import javax.persistence.Entity;

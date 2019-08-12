@@ -11,10 +11,10 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.util.StringUtils;
 
 import com.example.cliniclala.api.model.Lancamento;
 import com.example.cliniclala.api.model.Lancamento_;
@@ -69,7 +69,7 @@ public class LancamentoRepositoryImpl implements LancamentoRepositoryQuery{
 	private void restricoesDePaginacoes(TypedQuery<Lancamento> query, Pageable pageable) {
 		int paginaAtual = pageable.getPageNumber();
 		int totalRegistrosPorPagina = pageable.getPageSize();
-		int primeiroRegistroDapagina = paginaAtual = totalRegistrosPorPagina;
+		int primeiroRegistroDapagina = paginaAtual * totalRegistrosPorPagina;
 		
 		query.setFirstResult(primeiroRegistroDapagina);
 		query.setMaxResults(totalRegistrosPorPagina);

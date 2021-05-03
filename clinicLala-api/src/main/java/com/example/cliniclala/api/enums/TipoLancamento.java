@@ -1,4 +1,4 @@
-package com.example.cliniclala.api.model;
+package com.example.cliniclala.api.enums;
 
 public enum TipoLancamento {
 

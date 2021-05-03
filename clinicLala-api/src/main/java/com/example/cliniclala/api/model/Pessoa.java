@@ -1,106 +1,66 @@
 package com.example.cliniclala.api.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "pessoa")
 public class Pessoa {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long cod;
-	
-	@NotNull
-	private String nome;
-	
-	@Embedded
-	private Endereco endereco;
-	
-	@NotNull
-	private Long cpf;
-	
-	@NotNull
-	private Boolean ativo;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long cod;
 
-	public Long getCod() {
-		return cod;
-	}
+    @NotNull
+    private String nome;
 
-	public void setCod(Long cod) {
-		this.cod = cod;
-	}
+    @Embedded
+    private Endereco endereco;
 
-	public String getNome() {
-		return nome;
-	}
+    @NotNull
+    private Long cpf;
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    @NotNull
+    private Boolean ativo;
 
-	public Boolean getAtivo() {
-		return ativo;
-	}
+    public Long getCod() {
+        return cod;
+    }
 
-	public void setAtivo(Boolean ativo) {
-		this.ativo = ativo;
-	}
-	
-	@JsonIgnore
-	@Transient
-	public boolean isInativo() {
-		return !this.ativo;
-	}
-	
-	/**
-	 * @return the cPF
-	 */
-	public Long getCPF() {
-		return cpf;
-	}
+    public void setCod(Long cod) {
+        this.cod = cod;
+    }
 
-	/**
-	 * @param cPF the cPF to set
-	 */
-	public void setCPF(Long cpf) {
-		cpf = cpf;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((cod == null) ? 0 : cod.hashCode());
-		return result;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Pessoa other = (Pessoa) obj;
-		if(cod == null) {
-			if(other.cod != null)
-				return false;
-		} else if (!cod.equals(other.cod))
-			return false;
-		return true;
-		}
-	}
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
+    }
+
+    @JsonIgnore
+    @Transient
+    public boolean isInativo() {
+        return !this.ativo;
+    }
+
+}
 

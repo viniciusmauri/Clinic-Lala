@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/cliniclala-api/.mvn/.mvn.iml" filepath="$PROJECT_DIR$/cliniclala-api/.mvn/.mvn.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cliniclala-api/cliniclala-api.iml" filepath="$PROJECT_DIR$/cliniclala-api/cliniclala-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clinicLala-api/cliniclala-api.iml" filepath="$PROJECT_DIR$/clinicLala-api/cliniclala-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/cliniclala-api/src/main/main.iml" filepath="$PROJECT_DIR$/cliniclala-api/src/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/cliniclala-api/src/test/test.iml" filepath="$PROJECT_DIR$/cliniclala-api/src/test/test.iml" />
     </modules>

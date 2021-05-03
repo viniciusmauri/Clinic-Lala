@@ -1,6 +1,10 @@
  package com.example.cliniclala.api.model;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +13,9 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "categoria")
 public class Categoria {
@@ -20,32 +27,4 @@ public class Categoria {
 	@NotNull
 	@Size(min = 3, max = 30)
 	private String nome;
-
-	/**
-	 * @return the cod
-	 */
-	public Long getCod() {
-		return cod;
-	}
-
-	/**
-	 * @param cod the cod to set
-	 */
-	public void setCod(Long cod) {
-		this.cod = cod;
-	}
-
-	/**
-	 * @return the nome
-	 */
-	public String getNome() {
-		return nome;
-	}
-
-	/**
-	 * @param nome the nome to set
-	 */
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 }

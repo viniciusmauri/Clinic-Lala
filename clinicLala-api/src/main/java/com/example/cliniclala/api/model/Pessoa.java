@@ -6,7 +6,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GenerationType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Table;
+import javax.persistence.Embedded;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 @Data
@@ -31,30 +37,6 @@ public class Pessoa {
 
     @NotNull
     private Boolean ativo;
-
-    public Long getCod() {
-        return cod;
-    }
-
-    public void setCod(Long cod) {
-        this.cod = cod;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Boolean getAtivo() {
-        return ativo;
-    }
-
-    public void setAtivo(Boolean ativo) {
-        this.ativo = ativo;
-    }
 
     @JsonIgnore
     @Transient
